@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+.abc{  
+	background-color: white;
+  	color: black;
+  	margin: 50px;
+  	padding: 50px;}
+</style>
+
+<script type="text/javascript">
+	//유효성 검사
+	function doSubmit(){
+		var frm =document.form1;
+		
+		if(!frm.user_name.value){
+			alert("이름을 입력해 주세요");
+			frm.user_name.focus();
+			return false;
+		}
+		if(!frm.gender[0].checked && !frm.gender[1].checked){
+			alert("성별을 체크해 주세요");
+			frm.gender[0].focus();
+			return false;
+		}
+		if(frm.job.selectedIndex < 1){
+			alert("직업을 선택해주세요");
+			frm.job.focus();
+			return false();
+		}
+		
+		var chk = false;
+		
+		for(var i=0;frm.hobby.length;i++){
+			if(frm.hobby[i].checked){
+				chk=true;
+				break;
+			}
+			
+		}
+		if(!chk){
+			alert("취미를 입력해 주세요");
+			frm.hobby[0].focus();
+			return false;
+		}
+	
+		if(confirm("입력하신 내용이 맞습니까? ")){
+			frm.submit();
+		}
+	}
+</script>
+
+</head>
+<body>
+<div class="abc">
+<fieldset>
+	<legend>회원가입</legend>
+	
+		<form name="form1" onsubmit="doSubmit(); return false;">
+		
+			<label>이름</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type ="text" name="user_name"><br/><hr/>
+			
+			<label>성별</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="radio" name="gender">남자
+			<input type="radio" name="gender">여자<br/><hr/>
+			
+			<label>직업</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<select name="job">
+				<option value="select">---선택하세요---</option>
+				<option value="학생" >학생</option>
+				<option value="공무원" >공무원</option>
+				<option value="선생님" >선생님</option>
+			</select><br/><hr/>
+			
+			<label>취미</label>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="hobby">축구
+			<input type="checkbox" name="hobby">농구
+			<input type="checkbox" name="hobby">야구<br/><hr/>
+			<input type="submit"><input type="reset" value="리셋">
+		</fieldset>
+	</form>
+</div>
+</body>
+</html>

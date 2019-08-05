@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function sum(x,y){
+		var z= x+y;
+		return z;	
+	}
+	function printResult(){
+		var result = sum(10,50);
+		var mytag = document.getElementById("question");
+		
+		mytag.innerHTML=result;
+	}
+	
+	function re(){
+		var result = "?";
+		var mytag = document.getElementById("question");
+		mytag.innerHTML=result;
+	}
+	
+	function insertQuestion(){
+		var q=prompt("사칙연산의 수식을 입력하세요(예: 100 +50)","");
+		var answer = eval(q);
+		var result = q + "=" + answer;
+		document.getElementById("questioin").innerHTML = result;
+	}
+</script>
+
+</head>
+<body onload ="insertQuestion()">
+	<!-- <h1 onmouseover="value=printResult()" onmouseout="value=re()">10+50=<span id="question">?</span> </h1> -->
+	
+	<h2 id="questioin"></h2>
+	<!-- <input type = "button" value = "결과보기" onclick="printResult()"/> -->
+</body>
+</html>
