@@ -10,7 +10,7 @@
 	<h3>회원관리</h3>
 	<ul>
 		<li><a href="menber_input">회원가입</a></li>
-		<li><a href="menber_List">회원정보ssss</a></li>
+		<li><a href="menber_List">회원정보 이대현 혼나는 수가 있다</a></li>
 		
 	</ul>
 	
